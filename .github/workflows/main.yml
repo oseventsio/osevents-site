@@ -16,3 +16,5 @@ jobs:
       run: npm ci && npm run build:prod
     - name: Deploy static site to S3 bucket
       run: aws s3 sync ./dist/osevents-site/ s3://osevents.io --delete
+    - name: Invalidate index.html
+      run: aws cloudfront create-invalidation --distribution-id E1BU2TC4998B7R --paths /index.html
