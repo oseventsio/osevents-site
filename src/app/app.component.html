@@ -3,9 +3,9 @@
 </mat-toolbar>
 
 <cdk-virtual-scroll-viewport #scroller itemSize="72" class="content">
-  <mat-list>
+  <mat-list style="width: calc(100vw - 17px);">
     <ng-container *cdkVirtualFor="let item of listItems">
-      <mat-list-item style="height:72px; width: calc(100vw - 17px);">
+      <mat-list-item style="height:72px;">
         <img matListAvatar [src]="item.image.url">
         <h3 matLine> {{item.title}} </h3>
         <span matLine>{{item.startDate | date:'EEE MMM d, h:mm a' | uppercase }}</span>
