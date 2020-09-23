@@ -14,12 +14,13 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   @ViewChild('scroller') scroller: CdkVirtualScrollViewport;
 
+  private next: string = '';
+
+  endOfEvents = false;
   listItems = [];
   loading = false;
 
-  constructor(private ngZone: NgZone, private http: HttpClient) {
-
-  }
+  constructor(private ngZone: NgZone, private http: HttpClient) {  }
 
   ngOnInit(): void {
     this.fetchMore();
@@ -39,9 +40,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
     );
   }
-
-  private next: string = '';
-  public endOfEvents = false;
 
   fetchMore(): void {
     if (this.endOfEvents) return;
