@@ -6,7 +6,7 @@
   <mat-list style="width: calc(100vw - 17px);">
     <ng-container *cdkVirtualFor="let item of listItems">
       <mat-list-item style="height:72px;">
-        <img matListAvatar [src]="'/assets/placeholder.jpg'">
+        <img matListAvatar [src]="item.image.url">
         <h3 matLine> {{item.title}} </h3>
         <span matLine>{{item.startDate | date:'EEE MMM d, h:mm a' | uppercase }}</span>
         <mat-divider></mat-divider>
